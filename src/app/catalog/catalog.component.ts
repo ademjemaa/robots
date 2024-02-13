@@ -9,6 +9,8 @@ import { IProduct } from './product.model';
 export class CatalogComponent {
   filter: string = '';
   products : any[];
+  cart : IProduct[] = [];
+
   constructor() {
     this.products =  [
       {
@@ -21,7 +23,6 @@ export class CatalogComponent {
         price: 1220.5,
         discount: 0.2,
       },
-      null,
       {
         id: 17,
         description: "A spring base - great for reaching high places.",
@@ -192,6 +193,12 @@ export class CatalogComponent {
     if (!product)
       return '';
     return '/assets/images/robot-parts/' + product.imageName;
+  }
+
+  addToCart(product : IProduct)
+  {
+    this.cart.push();
+    console.log(` product ${product.name} hadded to cart`)
   }
 
   getFilteredProducts()
