@@ -7,19 +7,12 @@ import { ILineItem } from './catalog/line-item.model';
 })
 export class CartService {
 
-  cart : ILineItem[] = []
+  cart : IProduct[] = []
 
-
-  getTotalPrice()
-  {
-
-  }
 
   addToCart(product : IProduct)
   {
-    
-    console.log(` product ${product.name} added to cart`)
-    console.log(` Total price : ${this.getTotalPrice()} `)
+    this.cart.push(product)
   }
 
   constructor() { }
